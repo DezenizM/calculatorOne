@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../js/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="calc">
+      <div class="mx-auto" style="width: 500px">
+        <!-- <nav class="nav nav-pills nav-fill">
+        <a class="nav-link active" href="#"
+          >Расчет содержания вещества в растворе</a
+        >
+        <a class="nav-link" href="#">Расчет скорости введения</a>
+      </nav> -->
+        <h3 class="mb-4">Расчет содержания вещества в растворе</h3>
+        <label for="basic-url" class="form-label">Процентное содержание</label>
+        <div class="input-group mb-4">
+          <span class="input-group-text" id="basic-addon1">%</span>
+          <input
+            v-on:change
+            type="number"
+            class="form-control"
+            placeholder="0"
+            v-model="percent"
+          />
+        </div>
+
+        <label for="basic-url" class="form-label">Объём ампулы</label>
+        <div class="input-group mb-4">
+          <span class="input-group-text" id="basic-addon1">мл</span>
+          <input
+            v-on:change
+            type="number"
+            class="form-control"
+            placeholder="0"
+            v-model="volume"
+          />
+        </div>
+        <div class="d-grid gap-2 mb-4">
+          <button type="reset" class="btn btn-primary" v-on:click="mreset();">
+            Сброс
+          </button>
+        </div>
+
+        <div>
+          <p class="text-primary">{{percent*volume*10}} {{messageOne()}}</p>
+          <p class="text-primary">{{percent*volume*10000}} {{messageTwo()}}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="../js/main.js"></script>
+</html>
