@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bg.css" rel="stylesheet" />
+    <script src="../js/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="calc" class="background">
+      <nav class="nav nav-pills nav-justified mb-5">
+        <a class="nav-link" href="calculatorSubstance.html"
+          >Расчет содержания вещества в растворе</a
+        >
+        <a class="nav-link active" href="#">Расчет скорости введения</a>
+        <a class="nav-link" href="info.html">Информация</a>
+      </nav>
+
+      <div class="mx-auto" style="width: 500px">
+        <h3 class="mb-4">Расчет скорости введения</h3>
+        <label for="basic-url" class="form-label">Объём раствора</label>
+        <div class="input-group mb-4">
+          <span class="input-group-text" id="basic-addon1">мл</span>
+          <input
+            v-on:change
+            type="number"
+            class="form-control"
+            placeholder="0"
+            v-model="volume2"
+          />
+        </div>
+
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked"
+            v-model="switch1"
+            v-on:change="mchange();"
+            checked
+          />
+          <label class="form-check-label" for="flexSwitchCheckChecked"
+            >{{min}}</label
+          >
+        </div>
+
+        <label for="basic-url" class="form-label"
+          >Желаемое время введения</label
+        >
+        <div class="input-group mb-4">
+          <span class="input-group-text" id="basic-addon1">{{min}}</span>
+          <input
+            v-on:change
+            type="number"
+            class="form-control"
+            placeholder="0"
+            v-model="time"
+          />
+        </div>
+        <div class="d-grid gap-2 mb-4">
+          <button type="reset" class="btn btn-primary" v-on:click="mreset2();">
+            Сброс
+          </button>
+        </div>
+
+        <div>
+          <p class="text-primary">
+            {{messageThree()}} {{messageFive()}} в минуту
+          </p>
+          <p class="text-primary">
+            {{messageFour()}} {{messageSix()}} в секунду
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="../js/main.js"></script>
+</html>
