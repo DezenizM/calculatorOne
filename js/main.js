@@ -90,6 +90,9 @@ const Calculation = {
 
     messageSix() {
       let number4 = (this.volume2 * 20) / (this.time * 60);
+      if (this.switch1 === false) {
+        number4 = number4 / 60;
+      }
       number4 = Math.abs(number4);
       number4 %= 100;
       if (number4 >= 5 && number4 <= 20) {
