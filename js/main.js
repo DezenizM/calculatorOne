@@ -16,7 +16,7 @@ const Calculation = {
         return "миллиграмма";
       } else if (number % 10 === 1) {
         return "миллиграмм";
-      } else return "микрограммов";
+      } else return "миллиграммов";
     },
 
     messageTwo() {
